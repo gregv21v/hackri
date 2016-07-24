@@ -1,0 +1,36 @@
+{
+  "name": "eventful-react",
+  "version": "1.0.0",
+  "description": "Testing eventful API with React",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p",
+    "build": "NODE_ENV=production webpack -p"
+  },
+  "author": "Edwin Castillo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.13.1",
+    "express": "^4.14.0",
+    "path": "^0.12.7",
+    "react": "^15.2.1",
+    "react-addons-css-transition-group": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-facebook-login": "^3.1.0",
+    "react-router": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.22.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
