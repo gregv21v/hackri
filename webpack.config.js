@@ -20,7 +20,7 @@ module.exports = {
 		'./app/index.js'
 	],
 	output: {
-		path: __dirname + '/dist',
+		path: 'dist',
 		filename: "bundle.js"
 	},
   resolve: {
