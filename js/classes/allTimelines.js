@@ -14,7 +14,7 @@ function AllTimelines() {
 
 
   var self = this;
-  d3.select("svg").on("click", function() {
+  d3.select("#svgVisualize").on("click", function() {
     self.update()
   })
 

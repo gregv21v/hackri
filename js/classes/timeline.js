@@ -1,6 +1,8 @@
 function Timeline(y, height) {
   this.events = [];
   this.yStart = y; // the first row for the first event
+  this.lastYOffset = y;
+  this.eventHeight = 25;
 
 
   var vis = d3.select("#svgVisualize");
@@ -37,27 +39,35 @@ function Timeline(y, height) {
                           .ticks(24 * 30)
                           .innerTickSize(-100)*/
 }
-
+/*
+  Adds and creates an event
+*/
 Timeline.prototype.addEvent = function (startTime, endTime, name, color) {
-  // 
-
-  this.events.push(new Event(startTime, endTime, name, color, this.xRange, this.yStart))
-
-  this.yStart += 25;
+  this.events.push(new Event(startTime, endTime, name, color, this.xRange, this.lastYOffset))
+  this.lastYOffset += 25;
 };
 
 /*
   Different from add event as it moves an already existing event
 */
 Timeline.prototype.moveTo = function (evnt) {
-  evnt.updateY(this.yStart);
+  // cascade events from the top of the Timeline
   this.events.push(evnt)
 
-  this.yStart += 25;
+  // update the events locations
+  for (var i = 0; i < this.events.length; i++) {
+    this.events[i].updateY(this.yStart + i * 25)
+  }
+
 };
 
 Timeline.prototype.moveFrom = function (evnt) {
-  return this.remove(evnt.id)
+  var removedEvent = this.remove(evnt.id)
+
+  // update the events locations
+  for (var i = 0; i < this.events.length; i++) {
+    this.events[i].updateY(this.yStart + i * 25)
+  }
 };
 
 
