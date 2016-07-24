@@ -44,7 +44,7 @@ function Timeline() {
 }
 
 Timeline.prototype.addEvent = function (startTime, endTime, name, color) {
-  this.events.push(new Event(startTime, endTime, name, color, this.range, this.xStart, this.yStart))
+  this.events.push(new Event(startTime, endTime, name, color, this.xRange, this.xStart, this.yStart))
 
   this.yStart += 25;
 };
