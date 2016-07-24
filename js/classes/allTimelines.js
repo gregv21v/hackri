@@ -3,8 +3,8 @@
   The interface is the whole gui.
 */
 function AllTimelines() {
-  this.available = new Timeline(60, 240)
-  this.selected = new Timeline(400, 300)
+  this.available = new Timeline(60, 240, "Events")
+  this.selected = new Timeline(400, 300, "My Events")
 
 
   this.available.addEvent(new Date(2016, 23, 7, 12, 0), new Date(2016, 23, 7, 13, 0), "HI", "red");

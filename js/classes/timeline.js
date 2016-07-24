@@ -1,11 +1,15 @@
-function Timeline(y, height) {
+function Timeline(y, height, title) {
   this.events = [];
-  this.yStart = y; // the first row for the first event
-  this.lastYOffset = y;
+  this.yStart = y + 20; // the first row for the first event
+  this.lastYOffset = y + 20;
   this.eventHeight = 25;
 
 
   var vis = d3.select("#svgVisualize");
+  /*this.title = vis.append("text")
+                    .text(title)
+                    .attr("x", 20 + 1450 / 2)
+                    .attr("y", 20)*/
 
   this.xRange = d3.time.scale()
                   .range([20, 1450]) // start and end x values
@@ -13,11 +17,21 @@ function Timeline(y, height) {
   this.xAxis = d3.svg.axis().scale(this.xRange)
                            .ticks(24)
                            .tickFormat(d3.time.format("%I:%M %p"));
+  this.xAxis2 = d3.svg.axis().scale(this.xRange)
+                           .ticks(24 * 6)
+
 
   this.ticks = vis.append("svg:g")
                     .call(this.xAxis)
-                    .attr("transform", "translate(0, " + y + " )")
-                    .attr("class", "axis")
+                      .attr("transform", "translate(0, " + this.yStart + " )")
+                      .attr("class", "axis")
+
+  this.ticks2 = vis.append("svg:g")
+                    .call(this.xAxis2)
+                      .attr("transform", "translate(0, " + this.yStart + " )")
+                      .attr("class", "axis2")
+
+
   // tick text
   this.ticks.selectAll("text")
     .style("font-size", 10)
@@ -29,10 +43,13 @@ function Timeline(y, height) {
   // tick lines
   this.ticks.selectAll("line")
     .attr("y2", height)
+    .attr("stroke-width", 1.5)
 
 
-                                      //.attr("dx", "-.8em")
-                                      //.attr("dy", ".15em")
+  this.ticks2.selectAll("line")
+    .attr("y2", height)
+    .attr("stroke-width", 0.5)
+
 
   /* Smaller Ticks
   var xAxis2 = d3.svg.axis().scale(xRange)

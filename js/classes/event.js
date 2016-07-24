@@ -34,7 +34,7 @@ function Event(startTime, endTime, name, color, xRange, y)  {
   this.svg.rect.on("click", function() {
     // add to the users events
     self.selected = true;
-    self.svg.rect.attr("fill", "green")
+    //self.svg.rect.attr("fill", "green")
 
     console.log("Id: " + self.id);
     //self.hide();
