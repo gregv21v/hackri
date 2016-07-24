@@ -1,28 +1,10 @@
 
-/*
-  1) Figure out how to setup d3 in this project.
-  2) Test d3 in a simple way
-  3) Create a simple tree
-  4)
-*/
+
+$(function() {
+  var timeline = new Timeline();
+
+  timeline.addEvent(new Date(2016, 23, 7, 12, 0), new Date(2016, 23, 7, 1, 0), "HI", "red");
+  timeline.addEvent(new Date(2016, 23, 7, 8, 0), new Date(2016, 23, 7, 18, 0), "Meet and Greet", "blue")
 
 
-$(document).ready(function() {
-
-  var svgContext = d3.select("body")
-                    .append("svg")
-                      .attr("width", 1000)
-                      .attr("height", 1000)
-
-  var axisTimeline = d3.svg.axis()
-  var timeline = d3.select("svg")
-                  .append("g")
-                    .attr("transform", "translate(0,30)")
-                    .call(axisTimeline);
-
-  var evn = new Event(0, 0)
-
-
-
-
-})
+});

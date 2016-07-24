@@ -3,15 +3,95 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="lib/jquery-1.12.1.min.js"></script>
+    <script src="lib/d3.min.js"></script>
 
-    <script src="lib/d3.min.js" charset="utf-8"></script>
-    <script src="lib/jquery-3.1.0.min.js" charset="utf-8"></script>
+    <script src="js/classes/event.js" charset="utf-8"></script>
+    <script src="js/classes/timeline.js" charset="utf-8"></script>
 
     <script src="js/index.js" charset="utf-8"></script>
 
-    <script src="js/classes/event.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+
+
+    <!--<script type="text/javascript">
+      $(function() {
+        InitChart();
+      });
+
+      function toMilliseconds(timeString) {
+        var minutes = parseInt(timeString.split(":")[0])
+        var seconds = parseInt(timeString.split(":")[1].split(".")[0])
+        var milliseconds = parseInt(timeString.split(":")[1].split(".")[1])
+
+        return 100 * (60 * minutes + seconds) + milliseconds;
+      }
+
+      function toSeconds(timeString) {
+        var minutes = parseInt(timeString.split(":")[0])
+        var seconds = parseInt(timeString.split(":")[1].split(".")[0])
+        var milliseconds = parseInt(timeString.split(":")[1].split(".")[1])
+
+        return 60 * minutes + seconds + milliseconds / 100;
+      }
+
+      function toMinutes(timeString) {
+        var minutes = parseInt(timeString.split(":")[0])
+        var seconds = parseInt(timeString.split(":")[1].split(".")[0])
+        var milliseconds = parseInt(timeString.split(":")[1].split(".")[1])
+
+        return minutes + seconds / 60 + milliseconds / (100 * 60);
+      }
+
+      function InitChart() {
+
+
+
+
+
+
+
+
+
+
+        var yRange = d3.scale.linear()
+                       .range([40, 400])
+                       .domain([0, 20000]);
+
+        /*
+        var yRange = d3.scale.linear()
+                       .range([400, 40])
+                       .domain([d3.min(logs, function(d) {
+                         return d.pushups;
+                       }), d3.max(logs, function(d) {
+                         return d.pushups;
+                       })]);
+        */
+        //console.log(maxDate);
+        //console.log(minDate);
+
+
+
+
+
+
+        //var yAxis = d3.svg.axis().scale(yRange).orient("left"); // orient kind of rotates
+
+
+        // draw the axies
+
+
+        vis.append("svg:g").call(xAxis2).attr("transform", "translate(0, 100)")
+                                          .selectAll("circle")
+                                            .attr
+
+        //vis.append("svg:g").call(yAxis).attr("transform", "translate(80, 0)");
+
+      }
+    </script>-->
   </head>
   <body>
+    <svg id="svgVisualize" width="1500" height="1000"></svg>
 
   </body>
 </html>
