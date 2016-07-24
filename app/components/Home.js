@@ -14,7 +14,7 @@ const Home = () => {
         </ul>
       </div>
       <div className="bg">
-        <video className="bg-video" src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coverr-Lulu.mp4" autoPlay loop></video>
+        <video className="bg-video" src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coverr-Lulu.mp4"></video>
       </div>
     </div>
   )

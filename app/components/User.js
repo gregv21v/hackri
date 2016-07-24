@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Navbar from './Navbar'
+import Calendar from './Calendar'
 
 
 export default class User extends Component {
@@ -6,8 +8,8 @@ export default class User extends Component {
     super()
 
     this.state = {
-      fullname: '',
-      picture: ''
+      fullname: null,
+      picture: null
     }
   }
 
@@ -20,7 +22,16 @@ export default class User extends Component {
 
   render () {
     return (
-      <h1>{this.state.fullname}</h1>
+      <div>
+        <nav className="navbar navbar-default">
+          <a className="navbar-brand" href="#">DE</a>
+          <ul className="nav navbar-nav navbar-right">
+            <li><p>{this.state.fullname}</p></li>
+            <li><img src={this.state.picture}/></li>
+          </ul>
+        </nav>
+        <Calendar/>
+      </div>
     )
   }
 }

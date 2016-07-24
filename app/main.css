@@ -90,3 +90,39 @@
   left: 50%;
   transform: translateX(-50%) translateY(-60%);
 }
+
+/***************************************************/
+/********* NAVBAR STYLE ****************************/
+/**************************************************/
+
+.navbar {
+  font-family: proxima-nova, sans-serif;
+  padding: 15px;
+}
+
+.navbar p {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.navbar p:hover {
+  color: #00d9ff;
+}
+
+.navbar ul {
+  margin-right: 10px;
+}
+
+.navbar li {
+  margin-right: 15px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 50px;
+}
